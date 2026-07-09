@@ -227,3 +227,30 @@ footer{
     padding: 20px;
     animation: popup .5s;
 }
+
+.coffee-hero{
+    text-align: center;
+}
+
+.search-section{
+    text-align: center;
+    height:35px;
+}
+
+.coffee-catalogue{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 35px;
+    transition: 4s;
+}
+
+.coffee-card{
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .15);
+    transition: .4s; 
+    text-align: center;   
+}
+
