@@ -254,3 +254,34 @@ footer{
     text-align: center;   
 }
 
+.equipment-hero{
+    text-align: center;
+}
+
+.equipment-card{
+    text-align: center;
+    padding:55px;
+}
+
+.equipment-card img{
+    border-radius: 25px;git
+    width:45%;
+    height:45%;
+}
+
+table{
+    Width:100%;
+    border-collapse: collapse;
+    margin-bottom:30px;
+}
+
+.cart-page h1{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+th,td{
+    padding:15px;
+    border-bottom: 1px solid;
+    text-align: center;
+}
