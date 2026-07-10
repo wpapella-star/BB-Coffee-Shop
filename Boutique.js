@@ -37,3 +37,66 @@ window.addEventListener("click", function (event) {
         modal.style.display = "none";
     }
 });
+
+// ==========================
+// DISPLAY CART
+// ==========================
+
+const cartBody = document.getElementById("cartItems");
+
+if (cartBody) {
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let grandTotal = 0;
+
+    cart.forEach((item, index) => {
+
+        const total = item.price * item.quantity;
+
+        grandTotal += total;
+
+        cartBody.innerHTML += `
+
+        <tr>
+
+        <td>${item.name}</td>
+
+        <td>$${item.price}</td>
+
+        <td>${item.quantity}</td>
+
+        <td>$${total}</td>
+
+        <td>
+
+        <button class="remove" onclick="removeItem(${index})">
+
+        Remove
+
+        </button>
+
+        </td>
+
+        </tr>
+
+        `;
+
+    });
+
+    document.getElementById("grandTotal").textContent =
+        "Grand Total: $" + grandTotal;
+
+}
+
+function removeItem(index){
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.splice(index,1);
+
+    localStorage.setItem("cart",JSON.stringify(cart));
+
+    location.reload();
+
+}
