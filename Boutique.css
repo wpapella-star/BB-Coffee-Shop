@@ -285,3 +285,21 @@ th,td{
     border-bottom: 1px solid;
     text-align: center;
 }
+
+.events-hero{
+    text-align: center;
+}
+
+.workshop-container{
+    text-align: center;
+}
+
+.workshop-card{
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .15);
+    transition: .4s; 
+    text-align: center;
+    margin-bottom:55px;
+}
