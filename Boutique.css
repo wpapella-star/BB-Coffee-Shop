@@ -95,7 +95,7 @@ nav a{
     color:white;
     text-decoration:none;
     padding:14px 28px;
-    border-radius:8px;
+    border-radius:12px;
     transition:.3s;
     cursor:pointer;
     border:none;
@@ -264,7 +264,7 @@ footer{
 }
 
 .equipment-card img{
-    border-radius: 25px;git
+    border-radius: 25px;
     width:45%;
     height:45%;
 }
@@ -328,3 +328,20 @@ text-align:center;
 transition:.3s;
 
 }
+
+.remove-btn {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cart-item-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
