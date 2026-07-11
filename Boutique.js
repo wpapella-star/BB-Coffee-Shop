@@ -1,102 +1,41 @@
-const slides = document.querySelectorAll(".Slide");
-
-let currentSlide = 0;
-
-function showSlide(index) {
-    slides.forEach(slide => {
-        slide.classList.remove("active");
-    });
-    slides[index].classList.add("active");
-}
-showSlide(currentSlide);
-setInterval(function () {
-    currentSlide++;
-    if (currentSlide >= slides.length) {
-        currentSlide = 0;
+document.addEventListener('DOMContentLoaded', () => {
+   const slides = document.querySelectorAll('.Slide');
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        setInterval(nextSlide, 4000);
     }
-    showSlide(currentSlide);
-}, 3000);
-
-
-const modal = document.getElementById("Discount");
-const closeBtn = document.querySelector(".close");
-
-window.addEventListener("load", function () {
-    if (!sessionStorage.getItem("popupShown")) {
-        modal.style.display = "block";
-        sessionStorage.setItem("popupShown", "true");
+    const discountModal = document.getElementById('Discount');
+    const closeBtn = document.querySelector('.Modal .close');
+    
+    if (discountModal && closeBtn) {
+        // Automatically show the popup on screen after a short delay
+        setTimeout(() => {
+            discountModal.style.display = 'block';
+        }, 1500);
+        closeBtn.addEventListener('click', () => {
+            discountModal.style.display = 'none';
+        });
+        window.addEventListener('click', (e) => {
+            if (e.target === discountModal) {
+                discountModal.style.display = 'none';
+            }
+        });
     }
-});
 
-closeBtn.addEventListener("click", function () {
-    modal.style.display = "none";
-});
+  
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('Searchbutton');
+    const catalogue = document.querySelector('.coffee-catalogue');
+    const coffeeCards = document.querySelectorAll('.coffee-card');
 
-window.addEventListener("click", function (event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-});
+    if (searchInput && searchButton) {
+        const handleSearch = () => {
+            const query = searchInput.value.toLowerCase().trim();
 
-// ==========================
-// DISPLAY CART
-// ==========================
-
-const cartBody = document.getElementById("cartItems");
-
-if (cartBody) {
-
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    let grandTotal = 0;
-
-    cart.forEach((item, index) => {
-
-        const total = item.price * item.quantity;
-
-        grandTotal += total;
-
-        cartBody.innerHTML += `
-
-        <tr>
-
-        <td>${item.name}</td>
-
-        <td>$${item.price}</td>
-
-        <td>${item.quantity}</td>
-
-        <td>$${total}</td>
-
-        <td>
-
-        <button class="remove" onclick="removeItem(${index})">
-
-        Remove
-
-        </button>
-
-        </td>
-
-        </tr>
-
-        `;
-
-    });
-
-    document.getElementById("grandTotal").textContent =
-        "Grand Total: $" + grandTotal;
-
-}
-
-function removeItem(index){
-
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    cart.splice(index,1);
-
-    localStorage.setItem("cart",JSON.stringify(cart));
-
-    location.reload();
-
-}
+            
