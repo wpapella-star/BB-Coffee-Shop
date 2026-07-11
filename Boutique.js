@@ -84,3 +84,34 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    if (catalogue && coffeeCards.length > 0) {
+        function handleResponsiveResize() {
+            const width = window.innerWidth;
+            if (width < 600) {
+                catalogue.style.display = 'grid';
+                catalogue.style.gridTemplateColumns = '1fr';
+                catalogue.style.gap = '15px';
+            } else if (width >= 600 && width < 1024) {
+                catalogue.style.display = 'grid';
+                catalogue.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                catalogue.style.gap = '20px';
+            } else {
+                catalogue.style.display = 'grid';
+                catalogue.style.gridTemplateColumns = 'repeat(3, 1fr)';
+                catalogue.style.gap = '30px';
+            }
+        }
+
+        function debounce(func, delay) {
+            let timeoutId;
+            return function (...args) {
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(() => func.apply(this, args), delay);
+            };
+        }
+
+        handleResponsiveResize();
+        window.addEventListener('resize', debounce(handleResponsiveResize, 100));
+    }
+});
