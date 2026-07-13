@@ -245,13 +245,17 @@ footer{
     transition: 4s;
 }
 
-.coffee-card{
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .15);
-    transition: .4s; 
-    text-align: center;   
+.coffee-card {
+    opacity: 1;
+    transform: scale(1);
+    display: block;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.coffee-card.hidden-card {
+    opacity: 0;
+    transform: scale(0.9);
+    display: none;
 }
 
 .equipment-hero{
@@ -344,4 +348,5 @@ transition:.3s;
     object-fit: cover;
     border-radius: 4px;
 }
+
 
