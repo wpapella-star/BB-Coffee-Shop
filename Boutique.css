@@ -172,6 +172,22 @@ section h2{
     box-shadow:0 4px 12px rgba(0,0,0,.1);
 }
 
+#registerForm {
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+#registerForm input:focus {
+     border-color: #a0522d;
+     outline: none;
+  box-shadow: 0 0 0 3px rgba(160, 82, 45, 0.2);
+}
+
 
 .newsletter{
     text-align:center;
@@ -404,21 +420,90 @@ footer{
     padding: 12px;
 }
 
-
 .equipment-hero{
-    text-align: center;
+    text-align:center;  
 }
 
-.equipment-card{
-    text-align: center;
-    padding:55px;
+.equipment-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-.equipment-card img{
-    border-radius: 25px;
-    width:45%;
-    height:45%;
+.equipment-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+
+.equipment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.equipment-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover; 
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.equipment-card h3 {
+  font-size: 22px;
+  color: #333333;
+  margin: 10px 0 5px 0;
+}
+
+.equipment-card p {
+  font-size: 15px;
+  color: #666666;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.equipment-card h4 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #a0522d; 
+  margin: auto 0 5px 0; 
+}
+
+.equipment-card h4 + p {
+  font-style: italic;
+  font-size: 14px;
+  color: #555555;
+  margin-bottom: 20px;
+}
+
+.equipment-card .btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #a0522d;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.equipment-card .btn:hover {
+  background-color: #8b4513; 
+}
+
 
 table{
     Width:100%;
