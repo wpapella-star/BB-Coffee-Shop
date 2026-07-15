@@ -4,6 +4,14 @@
     box-sizing:border-box;
 }
 
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    flex-shrink: 0; 
+}
+
+
 body{
     font-family:'Poppins', sans-serif;
     background:#FFF8F2;
@@ -17,7 +25,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 8%;
-    flex-wrap: wrap;
+    width: 100%
 }
 
 nav {
@@ -66,6 +74,7 @@ nav a{
     transition:opacity 1s ease-in-out;
     z-index:1;
 }
+
 .Slide.active{
     opacity:1;
 }
@@ -173,7 +182,7 @@ section h2{
 }
 
 #registerForm {
-  max-width: 100%;
+  max-width: 40;
   margin: 20px auto;
   padding: 25px;
   background-color: #ffffff;
@@ -182,10 +191,22 @@ section h2{
   font-family: Arial, sans-serif;
 }
 
+#registerForm input[type="text"],
+#registerForm input[type="email"] {
+  width: 40%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-sizing: border-box; 
+  font-size: 16px; 
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
 #registerForm input:focus {
      border-color: #a0522d;
      outline: none;
-  box-shadow: 0 0 0 3px rgba(160, 82, 45, 0.2);
+     box-shadow: 0 0 0 3px rgba(160, 82, 45, 0.2);
 }
 
 
@@ -580,6 +601,7 @@ transition:.3s;
     object-fit: cover;
     border-radius: 4px;
 }
+
 .hidden-card {
     display: none !important;
 }
