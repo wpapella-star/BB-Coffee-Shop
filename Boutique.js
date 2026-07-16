@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     existingItem.quantity += 1;
                 } else {
                     cart.push({ title, price, imageSrc, quantity: 1 });
-                }w
+                }
 
                 saveCart();
                 alert(`"${title}" has been successfully added to your cart basket!`);
