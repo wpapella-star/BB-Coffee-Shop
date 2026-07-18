@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.addEventListener('click', (e) => {
                 const card = e.target.parentElement;
                 const title = card.querySelector('h3').textContent.trim();
-                const priceRaw = card.querySelector('h4').textContent.trim();
+                const priceRaw = card.querySelector('h3').textContent.trim();
                 const imageSrc = card.querySelector('img').getAttribute('src');
                 const price = cleanPrice(priceRaw);
                 const existingItem = cart.find(item => item.title === title);

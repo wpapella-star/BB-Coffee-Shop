@@ -1,4 +1,4 @@
-*{
+* {
     margin:0;
     padding:0;
     box-sizing:border-box;
@@ -182,7 +182,7 @@ section h2{
 }
 
 #registerForm {
-  max-width: 40;
+  max-width: 100%;
   margin: 20px auto;
   padding: 25px;
   background-color: #ffffff;
